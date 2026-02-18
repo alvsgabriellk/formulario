@@ -8,7 +8,6 @@ const messagetextarea = document.querySelector("#message")
 form.addEventListener("submit", function(event) {
     event.preventDefault()
 
-    // Verifica se o nome está vazio
     if (nameinput === "") {
         alert("Por favor, preencha o seu nome")
         return
@@ -19,6 +18,6 @@ form.addEventListener("submit", function(event) {
         return
     }
 
-    // Se todos os campos estiverem preenchidos, envio do form:
+    // Se tiver tudo ok -> envio do form:
     form.submit()
 })
