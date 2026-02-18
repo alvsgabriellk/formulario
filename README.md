@@ -7,3 +7,5 @@ A proposta foi simular um cenário real, onde um formulário precisa garantir qu
 Mais do que apenas a construção visual da página, o foco principal foi compreender a lógica por trás das validações no lado do cliente (client-side), manipulando o DOM, capturando eventos e fornecendo alertas ao usuário de forma clara e imediata.
 
 Este projeto faz parte do meu processo de aprendizagem em desenvolvimento front-end, buscando consolidar conhecimentos teóricos por meio da prática.
+
+Page: https://alvsgabriellk.github.io/formulario/
