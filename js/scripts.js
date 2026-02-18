@@ -1,7 +1,7 @@
 const form = document.querySelector("#form")
 const nameinput = document.querySelector("#name")
 const emailinput = document.querySelector("#email")
-const password = document.querySelector("#password")
+const passwordinput = document.querySelector("#password")
 const jobselect = document.querySelector("#job")
 const messagetextarea = document.querySelector("#message")
 
@@ -9,14 +9,28 @@ const messagetextarea = document.querySelector("#message")
 form.addEventListener("submit", function(event) {
     event.preventDefault()
 
-    if (nameinput === "") {
+    if (nameinput.value === "") {
         alert("Por favor, preencha o seu nome")
         return
     }
 
-    if (emailinput === "" || isEmailValid(emailinput.value)) {
+    if (emailinput.value === "" || !isEmailValid(emailinput.value)) {
         alert("Por favor, preencha o seu email")
         return
+    }
+
+    if (!validatePassword(passwordinput.value, 8)) {
+        alert("A senha precisa ser no mínimo 8 dígitos.")
+        return
+    }
+
+    if (jobselect.value === "") {
+        alert("Por favor, selecione a sua situação.")
+        return
+    }
+
+    if (messagetextarea.value === "") {
+        alert("Por favor, escreva uma mensagem.")
     }
 
     // Se tiver tudo ok -> envio do form:
@@ -33,6 +47,16 @@ function isEmailValid(email) {
     
     // Validação de regra do padrão do regexp
     if (emailRegex.test(email)) {
+        return true
+    }
+
+    return false
+}
+
+
+// Validação para a senha
+function validatePassword(password, minDigits) {
+    if (password.length >= minDigits) {
         return true
     }
 
